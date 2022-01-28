@@ -4,7 +4,6 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
-import requests
 
 from keras.models import load_model
 model = load_model('model.h5')
@@ -65,35 +64,7 @@ def getResponse(ints, intents_json):
 def chatbot_response(msg):
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
-    url = requests.get('https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getCountries').content
-    json_file = json.loads(url)
     print(ints)
-    if ints[0]['intent'] == 'countries':
-        return 'Choose the country from this list: '+str(json_file['body'])+' ...and required data whether its a population or capital of the country in the following format i.e... Tell me the (capital or population) of Finland'
-    else:
-        return res
+    return res
 
-from flask import Flask, render_template, request
-
-app = Flask(__name__,template_folder='templates')
-app.static_folder = 'static'
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-@app.route("/get")
-def get_bot_response():
-    userText = request.args.get('msg')
-    return chatbot_response(userText)
-
-
-if __name__ == "__main__":
-    app.run()
-
-"""
-    if ints['intent'] == 'survey':
-        request.args.post('Choose your country from', Country)
-        userText_2 = request.args.get('msg_2')
-        if userText_2 in Country_s:
-"""
+chatbot_response("Hello")

@@ -14,60 +14,96 @@
          "responses": ["Happy to help!", "Any time!", "My pleasure"],
          "context": [""]
         },
+        {"tag": "countries",
+         "patterns": [ "Tell me information about Russia", "how's Sweden", "I'm making a survey about Finland", "I want more data about Australia"],
+         "responses": ["Determine the country you want info. about.."],
+         "context": [""]
+        },
+        {"tag": "usa_capital",
+         "patterns": ["Tell me the capital of the USA", "what's the capital of USA"],
+         "responses": ["Capital of USA is Washington D.C."],
+         "context": [""]
+        },
+        {"tag": "usa_population",
+         "patterns": ["Tell me the population of the USA", "I want to know population of USA", "Is USA crowded"],
+         "responses": ["Population of USA is 331,893745 Millions"],
+         "context": [""]
+        },
+        {"tag": "australia_capital",
+         "patterns": ["Tell me the capital of the Australia", "what's the capital of Australia"],
+         "responses": ["Capital of Australia is Canberra"],
+         "context": [""]
+        },
+        {"tag": "australia_population",
+         "patterns": ["Tell me the population of the Australia", "I want to know population of Australia", "Is Australia crowded"],
+         "responses": ["Population of Australia is 25,690000 Millions"],
+         "context": [""]
+        },
+        {"tag": "greece_capital",
+         "patterns": ["Tell me the capital of the Greece", "what's the capital of Greece"],
+         "responses": ["Capital of Greece is Athens"],
+         "context": [""]
+        },
+        {"tag": "greece_population",
+         "patterns": ["Tell me the population of the Greece", "I want to know population of Greece", "Is Greece crowded"],
+         "responses": ["Population of Greece is 10,700000 Millions"],
+         "context": [""]
+        },
+        {"tag": "sweden_capital",
+         "patterns": ["Tell me the capital of the Sweden", "what's the capital of Sweden"],
+         "responses": ["Capital of Sweden is Stockholm"],
+         "context": [""]
+        },
+        {"tag": "sweden_population",
+         "patterns": ["Tell me the population of the Sweden", "I want to know population of Sweden", "Is Sweden crowded"],
+         "responses": ["Population of Sweden is 10,350000 Millions"],
+         "context": [""]
+        },
+        {"tag": "finland_capital",
+         "patterns": ["Tell me the capital of the Finland", "what's the capital of Finland"],
+         "responses": ["Capital of Finland is Helsinki"],
+         "context": [""]
+        },
+        {"tag": "finland_population",
+         "patterns": ["Tell me the population of the Finland", "I want to know population of Finland", "Is Finland crowded"],
+         "responses": ["Population of Finland is 5,531000 Millions"],
+         "context": [""]
+        },
+        {"tag": "japan_capital",
+         "patterns": ["Tell me the capital of the Japan", "what's the capital of Japan"],
+         "responses": ["Capital of Japan is Tokyo"],
+         "context": [""]
+        },
+        {"tag": "japan_population",
+         "patterns": ["Tell me the population of the Japan", "I want to know population of Japan", "Is Japan crowded"],
+         "responses": ["Population of Japan is 125,800000 Millions"],
+         "context": [""]
+        },
+        {"tag": "russia_capital",
+         "patterns": ["Tell me the capital of the Russia", "what's the capital of Russia"],
+         "responses": ["Capital of Russia is Moscow"],
+         "context": [""]
+        },
+        {"tag": "russia_population",
+         "patterns": ["Tell me the population of the Russia", "I want to know population of Russia", "Is Russia crowded"],
+         "responses": ["Population of Russia is 144,100000 Millions"],
+         "context": [""]
+        },
+        {"tag": "india_capital",
+         "patterns": ["Tell me the capital of the India", "what's the capital of India"],
+         "responses": ["Capital of India is Delhi"],
+         "context": [""]
+        },
+        {"tag": "india_population",
+         "patterns": ["Tell me the population of the India", "I want to know population of India", "Is Japan India"],
+         "responses": ["Population of India is 1,380,000000 Billions"],
+         "context": [""]
+        },
         {"tag": "noanswer",
          "patterns": [],
          "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
          "context": [""]
-        },
-        {"tag": "options",
-         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
-         "context": [""]
-        },
-        {"tag": "adverse_drug",
-         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
-         "responses": ["Navigating to Adverse drug reaction module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure",
-         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure_search",
-         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
-         "responses": ["Please provide Patient ID", "Patient ID?"],
-         "context": ["search_blood_pressure_by_patient_id"]
-        },
-        {"tag": "search_blood_pressure_by_patient_id",
-         "patterns": [],
-         "responses": ["Loading Blood pressure result for Patient"],
-         "context": [""]
-        },
-        {"tag": "pharmacy_search",
-         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
-         "responses": ["Please provide pharmacy name"],
-         "context": ["search_pharmacy_by_name"]
-        },
-        {"tag": "search_pharmacy_by_name",
-         "patterns": [],
-         "responses": ["Loading pharmacy details"],
-         "context": [""]
-        },
-        {"tag": "hospital_search",
-         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
-         "responses": ["Please provide hospital name or location"],
-         "context": ["search_hospital_by_params"]
-        },
-        {"tag": "search_hospital_by_params",
-         "patterns": [],
-         "responses": ["Please provide hospital type"],
-         "context": ["search_hospital_by_type"]
-        },
-        {"tag": "search_hospital_by_type",
-         "patterns": [],
-         "responses": ["Loading hospital details"],
-         "context": [""]
         }
+
    ]
 }

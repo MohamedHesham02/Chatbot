@@ -1,6 +1,5 @@
 import nltk
 from nltk.stem import WordNetLemmatizer
-lemmatizer = WordNetLemmatizer()
 import json
 import pickle
 
@@ -10,13 +9,14 @@ from tensorflow.keras.layers import Dense, Activation, Dropout
 from tensorflow.keras.optimizers import SGD
 import random
 
-words=[]
+words=[] 
 classes = []
 documents = []
 ignore_words = ['?', '!']
 data_file = open('data.json').read()
 intents = json.loads(data_file)
 
+lemmatizer = WordNetLemmatizer()
 
 for intent in intents['intents']:
     for pattern in intent['patterns']:
@@ -33,9 +33,12 @@ for intent in intents['intents']:
 
 # lemmaztize and lower each word and remove duplicates
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
+
 words = sorted(list(set(words)))
+
 # sort classes
 classes = sorted(list(set(classes)))
+
 # documents = combination between patterns and intents
 print (len(documents), "documents")
 # classes = intents
@@ -49,8 +52,10 @@ pickle.dump(classes,open('labels.pkl','wb'))
 
 # create our training data
 training = []
+
 # create an empty array for our output
 output_empty = [0] * len(classes)
+
 # training set, bag of words for each sentence
 for doc in documents:
     # initialize our bag of words
@@ -59,6 +64,7 @@ for doc in documents:
     pattern_words = doc[0]
     # lemmatize each word - create base word, in attempt to represent related words
     pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
+    
     # create our bag of words array with 1, if word match found in current pattern
     for w in words:
         bag.append(1) if w in pattern_words else bag.append(0)
