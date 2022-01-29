@@ -39,7 +39,7 @@ Dataset = { 'usa' : { 'capital': 'Washington, D.C.', 'population': '331,893745 M
             'finland' : { 'capital': 'Helsinki', 'population': '5,531000 Millions'},
             'japan' : { 'capital': 'Tokyo', 'population': '125,800000 Millions'},
             'russia' : { 'capital': 'Moscow', 'population': '144,100000 Millions'},
-            'india' : { 'capital': 'Delhi', 'population': '1,380,000000 Millions'} }
+            'india' : { 'capital': 'Delhi', 'population': '1,380,000000 Billions'} }
 
 # countries asking possible inputs from user
 countries_input = ['data', 'countries', 'survey', 'tell', 'me', 'capital', 'population', 'crowded']

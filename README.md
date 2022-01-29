@@ -20,12 +20,17 @@ Providing examples of words that maybe occurred in the chat cases messages and p
   git clone https://github.com/MohamedHesham02/Chatbot.git
   cd Chatbot
   pip install fastapi uvicorn
-  uvicorn Chatbot:app --reload
+  uvicorn Chatbot_api:app --reload
   ```
 ##### open browser and write url: 127.0.0.1:8000/docs
 
   or 
-  #######
+  
+  ```sh
+  git clone https://github.com/MohamedHesham02/Chatbot.git
+  cd Chatbot
+  python Chatbot_without_api.py
+  ```
   
 #### Advantages of Basic Chatbot:
   * Easier to implement in case of low no. in chat cases
@@ -56,8 +61,8 @@ Providing examples of words that maybe occurred in the chat cases messages with 
 
   ```sh
   git clone https://github.com/MohamedHesham02/Chatbot.git
-  pip install -r requirements.txt
   cd Chatbot
+  pip install -r requirements.txt
   cd DL_Approach
   python app.py
   ```
