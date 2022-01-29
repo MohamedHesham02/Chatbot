@@ -70,7 +70,7 @@ Providing examples of words that maybe occurred in the chat cases messages with 
 ##### open browser and write url: 127.0.0.1:5000
 
 
-### Test Deep Learning Chatbot Demo
+### Deep Learning Chatbot Demo
 
 ![alt text](DL_Approach/test_imgs/1.png)
 ![alt text](DL_Approach/test_imgs/2.png)
