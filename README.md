@@ -10,7 +10,7 @@ The target from this task is to implement a basic chatbot for certain test chat 
   * Asking for countries capital or population
   * selection of wrong country
   * Thanking 
-  
+
 ### Chatbot Basic Approach:
 
 Providing examples of words that maybe occurred in the chat cases messages and provide the suitable responses to reach user required answers
@@ -70,4 +70,7 @@ Providing examples of words that maybe occurred in the chat cases messages with 
 ##### open browser and write url: 127.0.0.1:5000
 
 
+### Test Demo
 
+![alt text](DL_Approach/test_imgs/1.png)
+![alt text](DL_Approach/test_imgs/2.png)
