@@ -70,6 +70,18 @@ def check_input(user_response):
         flag_2 = False
         return Dataset[sele_country.lower()][selected_feature.lower()]    
 
+## trial of 2nd API but unfortunately failed, also in 3rd API same problem
+## 
+"""
+@app.get('/get_country')      
+def getting_countries():
+    url = "https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getCountries"
+    with urllib.request.urlopen(url) as link:
+        countries = link.read()
+    body = {"country": "Australia"}
+    r = requests.post('https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getPopulation',data=body)
+    return countries,r.text
+"""
 
 # Chatbot implementation
 @app.post('/chat')
@@ -89,14 +101,16 @@ def chat(user_response:str):
                 print("ROBO: You are welcome..")
                         
             elif(greeting(user_response)!=None):
-                print("ROBO: ", greeting(user_response))
+                return("ROBO: "+greeting(user_response))
                 
             else:
-                print("ROBO: ", check_input(user_response))
+                return("ROBO: "+check_input(user_response))
                 
         else:
             flag=False
-            print("ROBO: Bye! take care..")
+            return("ROBO: Bye! take care..")
+            
+      
 
 
 if __name__ == '__main__':
