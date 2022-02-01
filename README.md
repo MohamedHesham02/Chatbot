@@ -2,7 +2,7 @@
 
 ## Project Overview:
 
-The target from this task is to implement a basic chatbot for certain test chat cases and provide the user with capitals and population of specific countries and tseting this chatpot using FAST and Restful API
+The target from this task is to implement a basic chatbot for certain test chat cases and provide the user with capitals and population of specific countries and tseting this chatpot using FAST and Restful APIs
 
 
 #### Chat Cases:
