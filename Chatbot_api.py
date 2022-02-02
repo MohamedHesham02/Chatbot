@@ -31,15 +31,10 @@ Country_s = []
 for i in range(len(Country)):
     Country_s.append(Country[i].lower())
 
-# capitals and population of countries
-Dataset = { 'usa' : { 'capital': 'Washington, D.C.', 'population': '331,893745 Millions'},
-            'greece' : { 'capital': 'Athens', 'population': '10,700000 Millions'},
-            'sweden' : { 'capital': 'Stockholm', 'population': '10,350000 Millions'},
-            'australia' : { 'capital': 'Canberra', 'population': '25,690000 Millions'},
-            'finland' : { 'capital': 'Helsinki', 'population': '5,531000 Millions'},
-            'japan' : { 'capital': 'Tokyo', 'population': '125,800000 Millions'},
-            'russia' : { 'capital': 'Moscow', 'population': '144,100000 Millions'},
-            'india' : { 'capital': 'Delhi', 'population': '1,380,000000 Billions'} }
+# capitals and population of countries urls
+cap_url = 'https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getCapital'
+pop_url = 'https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getPopulation'
+
 
 # countries asking possible inputs from user
 countries_input = ['data', 'countries', 'survey', 'tell', 'me', 'capital', 'population', 'crowded']
@@ -68,7 +63,32 @@ def check_input(user_response):
             selected_feature = input('ROBO: Do you want to display capital or population ? ')
             
         flag_2 = False
-        return Dataset[sele_country.lower()][selected_feature.lower()]    
+        
+        if selected_feature == 'capital':
+
+            if sele_country != 'usa':
+                sele_country_f = (sele_country.lower()).title()
+            else:
+                sele_country_f = sele_country.upper()
+                
+            payload_cap = {"country": sele_country_f}
+            r_cap = requests.post(cap_url, data=json.dumps(payload_cap)).content
+            json_file = json.loads(r_cap)
+            capital = json_file['body']['capital']
+            return 'Capital of {} is {}'.format(sele_country_f,capital)
+            
+        else:
+            
+            if sele_country != 'usa':
+                sele_country_f = (sele_country.lower()).title()
+            else:
+                sele_country_f = sele_country.upper()
+                
+            payload_pop = {"country": sele_country_f}
+            r_pop = requests.post(pop_url, data=json.dumps(payload_pop)).content
+            json_file = json.loads(r_pop)
+            population = json_file['body']['population']
+            return 'Population of {} is {}'.format(sele_country_f,population)   
 
 ## trial of 2nd API but unfortunately failed, also in 3rd API same problem
 ## 
