@@ -85,21 +85,8 @@ def check_input(user_response):
             population = json_file['body']['population']
             return 'Population of {} is {}'.format(sele_country_f,population) 
 
-## trial of 2nd API but unfortunately failed, also in 3rd API same problem
-## 
-"""
-@app.get('/get_country')      
-def getting_countries():
-    url = "https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getCountries"
-    with urllib.request.urlopen(url) as link:
-        countries = link.read()
-    body = {"country": "Australia"}
-    r = requests.post('https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getPopulation',data=body)
-    return countries,r.text
-"""
 
 # Chatbot implementation
-
 
 flag=True
 print("ROBO: My name is Robo. I will provide you the information you want. If you want to exit, type Bye!")
